@@ -2,20 +2,25 @@ const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({
     name : {
-        Type: String,
-        maxlength: 50
+        type: String,
+        maxlength: 50,
     },
     email:{
         type:String,
-        trim: trim,
+        trim: true,
+        unique: 1
+    },
+    password: {
+        type: String,
+        minlength: 5
     },
     lastname: {
         type: String,
-        maxlength: 50
+        maxlength: 50,
     },
     role:{
         type:Number,
-        default: 0
+        default: 0,
     },
     image: String,
     token:{
